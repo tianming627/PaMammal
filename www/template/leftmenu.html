@@ -1,0 +1,20 @@
+        
+      <div class="list leftmenu">
+        <div class="item"><a ui-sref="app.home" ng-click="toggleLeft()">Home</a></div>
+        <div class="item"><a ui-sref="app.login" ng-click="toggleLeft()">Login</a></div>
+        <!--<div class="item"><a ui-sref="app.register" ng-click="toggleLeft()">Register</a></div>-->
+        <div class="item"><a ui-sref="app.mammalrecords" ng-click="toggleLeft()">Mammals</a></div>
+        <div class="item item-sub"><a ui-sref="app.mammalobservation" ng-click="toggleLeft()">All Records</a></div>
+
+        <div ng-if="isLogin && (userType == 'mammal' || userType == 'both')" class="item item-sub"><a ui-sref="app.mymammalrecords" ng-click="toggleLeft()">My Records</a></div>
+        <div ng-if="isLogin && (userType == 'mammal' || userType == 'both')" class="item item-sub"><a ui-sref="app.mammalsubmission" ng-click="toggleLeft()">Submit a Record</a></div>
+
+        <div class="item"><a ui-sref="app.swinerecords" ng-click="toggleLeft()">Swine</a></div>
+        <div class="item item-sub"><a ui-sref="app.swineobservation" ng-click="toggleLeft()">All Records</a></div>        
+
+        <div ng-if="isLogin && (userType == 'swine' || userType == 'both')" class="item item-sub"><a ui-sref="app.myswinerecords" ng-click="toggleLeft()">My Swine Records</a></div>
+        <div ng-if="isLogin &&  (userType == 'swine' || userType == 'both')" class="item item-sub"><a ui-sref="app.swinesubmission" ng-click="toggleLeft()">Swine Submission</a></div>
+
+        <div class="item"><a ui-sref="app.site" ng-click="toggleLeft()">View Full Site</a></div>
+        <div class="item"><a ui-sref="app.picture" ng-click="toggleLeft()">Take a Picture</a></div>
+      </div>

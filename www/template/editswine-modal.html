@@ -1,0 +1,61 @@
+ 
+      
+      <ion-modal-view>
+        <ion-header-bar align-title="center" class="bar bar-header bar-positive">
+          <button class="button button-clear back-button-icon ion-ios-arrow-back" ng-click="modal.hide()"> Back</button>      
+          <h1 class="title">Edit Swine</h1>
+          
+        </ion-header-bar>
+        <ion-content padding class="Filter">
+
+          <div class="list">
+            <label class="item item-input">
+              <div ng-click="show()">
+                <img src="http://pamammalatlas.com/images/submitted/{{mammal.upload_image}}" ng-if="mammal.upload_image != undefined" style="padding:10px"  width="100%">
+                <img src="img/placeholder_mammal.png" ng-if="mammal.upload_image == undefined"  style="padding:10px" width="100%">
+              </div>
+            </label>
+            <label class="item item-input">
+              <div class="input-label">Mammal Species Observed*</div>              
+            </label>
+            <label class="item item-input item-select">
+              <div class="input-label">&nbsp</div>
+              <select ng-model="mammal.swine_species">
+                <option ng-repeat="spec in species" value="{{spec.name}}" ng-selected="spec.name == mammal.swine_species">{{spec.name}}</option>
+              </select>
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Date*</span>
+              <input type="date" value="" ng-model="mammal.DateSpotted">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Time*</span>
+              <input type="time" value="" ng-model="mammal.time_spotted">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">County*</span>              
+            </label>
+            <label class="item item-input item-select">
+              <span class="input-label">&nbsp</span>
+              <select ng-model="mammal.county_of_mammal">
+                <option ng-repeat="country in countries" value="{{country.value}}" ng-selected="country.value == mammal.county_of_mammal">{{country.data}}</option>
+              </select>
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Township</span>
+              <input type="text" value="" ng-model="mammal.township">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Location*</span>
+              <input type="text" value="" ng-model="mammal.location">
+            </label>           
+          </div>           
+          <div><br></div>                   
+          <div class="bar bar-footer bar-positive">
+            <div class="title" ng-click="submit(mammal)">Submit</div>            
+          </div>
+            
+        </ion-content>
+      </ion-modal-view>
+
+  

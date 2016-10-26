@@ -1,0 +1,55 @@
+ 
+      <ion-view title="Log In">
+        <ion-content padding="true" class="login">
+          <div style="height: 20%"></div>
+          <div style="height: 60%">
+            <div class="list" ng-if="!isLogin">
+
+
+
+              <label class="item item-input border-top">
+                <i class="ion-icon ion-ios-contact item-icon md-contact"></i>
+                <div class="item-inner border-bottom">
+                  <span class="login-label">Username</span>
+                  <input type="text" ng-model="user.username" class="ion-input">
+                </div>
+              </label>
+              <label class="item item-input">
+                <i class="ion-icon ion-ios-locked item-icon md-locked"></i>
+                <div class="item-inner border-bottom">
+                  <span class="login-label">Password</span>
+                  <input type="password" ng-model="user.password" class="ion-input">
+                </div>
+              </label>
+              <label class="item item-input item-select border-bottom" >
+                <div class="login-label">User Type</div>
+                <select ng-model="user.userType">
+                  <option value="both">Both</option>
+                  <option value="mammal">PA Mammal Atlas</option>
+                  <option value="swine">Swine User</option>
+                </select>
+              </label>
+            </div>
+            <div class="padding" ng-if="!isLogin">
+              <button class="button button-block button-positive" ng-click="login(user)">LOG IN</button>
+              <ul class="list border-bottom">
+                <li class="item item-toggle">
+                   Remember Me
+                   <label class="toggle toggle-positive">
+                     <input type="checkbox">
+                     <div class="track">
+                       <div class="handle"></div>
+                     </div>
+                   </label>
+                </li>
+              </ul>
+
+            </div>
+
+            <div class="padding" ng-if="isLogin">
+              <button class="button button-block button-positive" ng-click="logout()">LOGOUT</button>
+            </div>
+          </div>
+          <div style="height: 20%"></div>  
+        </ion-content>
+      </ion-view>

@@ -1,0 +1,22 @@
+  
+  <ion-view title="My PA Mammal Records">
+    <ion-content padding="true">
+
+      <div class="list card" ng-repeat="mammal in mymammals" ng-click="showModal(mammal)">
+        <div class="item item-image">
+          <img src="img/placeholder_mammal.png" ng-if="!mammal.upload_image">
+          <img src="http://pamammalatlas.com/images/submitted/{{mammal.upload_image}}" ng-if="mammal.upload_image">
+
+        </div>
+
+        <div class="item">
+          <p><b>Mammal Name:</b>  {{mammal.mammal_species}}</p>
+          <p><b>Volunteer:</b>  {{mammal.full_name}}</p>
+          <p><b>Date Spotted:</b>  {{mammal.DateSpotted}}</p>
+          <p><b>Time Spotted:</b>  {{mammal.time_spotted}}</p>
+          <p><b>County Spotted:</b>  {{mammal.county_of_mammal}}</p>
+        </div>
+      </div>
+
+    </ion-content>
+  </ion-view>

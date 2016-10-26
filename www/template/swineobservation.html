@@ -1,0 +1,23 @@
+
+      <ion-view title="Swine Observations">
+        <ion-content padding="true">
+
+          <div class="list card" ng-repeat="swine in swines">
+            <div class="item item-image">
+              <img src="img/placeholder_mammal.png" ng-if="!swine.upload_image">
+              <img src="http://pamammalatlas.com/images/submitted/{{swine.upload_image}}" ng-if="swine.upload_image">
+            </div>
+
+
+            <div class="item">
+              <p><b>Mammal Name:</b>  {{swine.swine_species}}</p>
+              <p><b>Volunteer:</b>  {{swine.full_name}}</p>
+              <p><b>Date Spotted:</b>  {{swine.DateSpotted}}</p>
+              <p><b>Time Spotted:</b>  {{swine.time_spotted}}</p>
+              <p><b>County Spotted:</b>  {{swine.county_of_mammal}}</p>
+            </div>
+          </div>
+
+        </ion-content>
+      </ion-view>
+    

@@ -1,0 +1,41 @@
+<ion-view title="PA Mammal Atlas" class="home" cache-view="false">
+  <ion-content scroll="false" style="padding: 16px;">
+    <ion-item class="item" style="height: 40%;">
+      <ion-label>
+        <h2 align="center">Welcome to the</h2>
+        <br>
+        <h2 align="center">Pennsylvania</h2>
+        <br>
+        <h2 align="center">Mammal Atlas!</h2>
+      </ion-label>
+    </ion-item>
+    
+    <ion-slide-box on-slide-changed="slideChanged($index)" style="text-align: center;height:60%" class="slide-box">
+      <ion-slide ng-repeat="image in gallery">
+        <img ng-src="{{image}}" class="slide-box__image" width="100" height="100"/>
+      </ion-slide>
+    </ion-slide-box>
+    
+  </ion-content>
+  <div class="left">
+        <button class="button button-positive button-clear no-animation icon ion-chevron-left"
+                ng-click="" ng-if="!slideIndex">
+        </button>
+        <button class="button button-positive button-clear no-animation icon ion-chevron-left"
+                ng-click="previous()" ng-if="slideIndex>0">
+
+        </button>
+      </div>
+
+
+      <div class="right">
+        <button class="button button-positive button-clear no-animation icon ion-chevron-right"
+                ng-click="next()" ng-if="!slideIndex">
+
+        </button>
+        <button class="button button-positive button-clear no-animation icon ion-chevron-right"
+                ng-click="next()" ng-if="slideIndex>0"> 
+
+        </button>
+      </div>
+</ion-view>

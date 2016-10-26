@@ -1,0 +1,24 @@
+      
+      <ion-modal-view>
+        <ion-header-bar align-title="left" class="bar bar-header bar-positive">
+          <h1 class="title">Swine Filter</h1>
+          <button class="button button-clear button-primary" ng-click="mySwinemodal.hide()">CLOSE</button>
+        </ion-header-bar>
+        <ion-content padding class="Filter">
+
+          <div class="list">
+            <label class="item item-input item-select">
+              <div class="input-label">Displaya</div>
+              <select ng-model="filter.selectedMStatus">                
+                <option ng-repeat="display in status" value="{{display.value}}">{{display.data}}</option>
+              </select>
+            </label>
+          </div>
+
+          <div><br></div>
+          <div class="bar bar-footer bar-positive">
+            <div class="title" ng-click="filterMySwine(filter)">Submit</div>            
+          </div>
+
+        </ion-content>
+      </ion-modal-view>

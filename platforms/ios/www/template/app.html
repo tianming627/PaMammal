@@ -1,0 +1,41 @@
+<ion-side-menus>
+  
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-positive">            
+    </ion-nav-bar>
+    <ion-nav-buttons side="left">
+      <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()">
+      </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+      
+      <button ng-if="isMammalObservation" ng-click="openModal()" class="button button-icon button-clear ion-ios-settings-strong"></button>
+      <button ng-if="isMyMammalRecords" ng-click="openMyMammalModal()" class="button button-icon button-clear ion-ios-settings-strong"></button>        
+      <button ng-if="isSwineObservation" ng-click="openSwineModal()" class="button button-icon button-clear ion-ios-settings-strong"></button>                        
+      <button ng-if="isMySwineRecords" ng-click="openMySwineModal()" class="button button-icon button-clear ion-ios-settings-strong"></button>
+      
+    </ion-nav-buttons>
+    <ion-nav-view name="appContent"></ion-nav-view>
+  </ion-side-menu-content> 
+  
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-positive">
+      <h1 class="title">PA Mammal</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-menu ng-controller='leftMenuController'></ion-menu>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
+
+<ion-spinner icon="spiral">cs</ion-spinner>
+
+<div ng-if="isMammalObservation || isMyMammalRecords" class="bar bar-footer bar-positive">
+  <button class="button button-clear ion-arrow-left-c" ng-click="prev()"></button>
+  <button class="button button-clear ion-arrow-right-c" ng-click="next()"></button>
+</div>
+
+<div ng-if="isSwineObservation || isMySwineRecords" class="bar bar-footer bar-positive">
+  <button class="button button-clear ion-arrow-left-c" ng-click="prev()"></button>
+  <button class="button button-clear ion-arrow-right-c" ng-click="next()"></button>
+</div>

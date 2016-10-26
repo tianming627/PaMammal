@@ -1,0 +1,148 @@
+ 
+      
+      <ion-view title="Swine Submission">
+        <ion-content padding="true" class="subform">
+        
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label">Your Name*</span>
+              <input type="text" ng-model="mammal.name">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">User Name*</span>
+              <input type="password" ng-model="mammal.username">
+            </label>
+            <label class="item item-input">
+              <div class="input-label">Mammal Species Observed*</div>
+            </label>
+            <label class="item item-input item-select">
+              <div class="input-label">&nbsp</div>
+              <select ng-model="mammal.swine_species">
+                <option ng-repeat="spec in species" value="{{spec.name}}">{{spec.name}}</option>
+              </select>
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Date*</span>
+              <input type="date" value="" ng-model="mammal.DateSpotted">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Time*</span>
+              <input type="time" value="" ng-model="mammal.time_spotted">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">County*</span>              
+            </label>
+            <label class="item item-input item-select">
+              <span class="input-label">&nbsp</span>
+              <select ng-model="mammal.county_of_mammal">
+                <option ng-repeat="country in countries" value="{{country.value}}">{{country.data}}</option>
+              </select>
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Township</span>
+              <input type="text" value="" ng-model="mammal.township">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Location*</span>
+              <input type="text" value="" ng-model="mammal.location">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Latitude(decimal degrees)</span>
+              <input type="text" value="" ng-model="mammal.latitude">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Longitude(decimal degrees)</span>
+              <input type="text" value="" ng-model="mammal.longitude">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Datum</span>            
+            </label>
+            <label class="item item-input item-select">
+              <span class="input-label">&nbsp</span>
+              <select ng-model="mammal.datum">
+                <option ng-repeat="data in datum" value="{{data.value}}">{{data.data}}</option>
+              </select>
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Age</span>              
+            </label>
+            <label class="item item-input item-select">
+              <span class="input-label">&nbsp</span>
+              <select ng-model="mammal.age">
+                <option ng-repeat="age in ages" value="{{age.value}}">{{age.data}}</option>
+              </select>
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Sex</span>        
+            </label>
+            <label class="item item-input item-select">
+              <span class="input-label">&nbsp</span>
+              <select ng-model="mammal.sex">
+                <option ng-repeat="sex in sexual" value="{{sex.value}}">{{sex.data}}</option>
+              </select>
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Habitat</span>              
+            </label>
+            <label class="item item-input item-select">
+              <span class="input-label">&nbsp</span>
+              <select ng-model="mammal.habitat">
+                <option ng-repeat="habitat in habitats" value="{{habitat.value}}">{{habitat.data}}</option>
+              </select>
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Habitat Description</span>
+              <textarea ng-model="mammal.habitat_detail" rows="8"></textarea> 
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Observation Method*</span>              
+            </label>
+            <label class="item item-input item-select">
+              <span class="input-label">&nbsp</span>
+              <select ng-model="mammal.technique">
+                <option ng-repeat="method in methods" value="{{method.value}}">{{method.data}}</option>
+              </select>
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Additional Information</span>
+              <textarea ng-model="mammal.technique_comment" rows="8"></textarea> 
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Do you have a picture of the mammal?*</span>
+              <label class="toggle toggle-positive">
+                 <input ng-model="mammal.have_picture_of_mammal" type="checkbox">
+                 <div class="track">
+                   <div class="handle"></div>
+                 </div>
+               </label>
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Do you take this picture?*</span>
+              <label class="toggle toggle-positive">
+                 <input ng-model="mammal.you_take_picture" type="checkbox">
+                 <div class="track">
+                   <div class="handle"></div>
+                 </div>
+               </label>
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Upload Picture</span>              
+            </label>
+            <label class="item item-input">
+            <div ng-click="show()">
+              <img src="{{mammal.upload_image}}" ng-if="mammal.upload_image != undefined" style="padding:10px"  width="100%">
+              <img src="img/placeholder_mammal.png" ng-if="mammal.upload_image == undefined" style="padding:10px" width="100%">
+            </div>  
+            </label>
+            <label class="item item-input">
+              <ion-checkbox ng-model="mammal.terms_conditions" style="border: none;">Terms and Conditions*</ion-checkbox>
+            </label>
+            
+          </div>         
+
+          <div class="padding">
+            <button class="button button-block button-positive" ng-click="submit(mammal)">Submit</button>
+          </div>
+          
+        </ion-content>
+      </ion-view>
